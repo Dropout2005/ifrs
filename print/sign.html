@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IFRS – Scan Sign</title>
+<style>
+@font-face { font-family: 'Archivo'; src: url('file:///home/claude/ifrs/node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'Inter'; src: url('file:///home/claude/ifrs/node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; }
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 8.5in; height: 11in; background: #0b2545; color: #fff; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: .7in; }
+.rain span { position: absolute; width: 2px; border-radius: 2px; background: linear-gradient(transparent, rgba(46,196,182,.55)); }
+.display { font-family: 'Archivo'; font-stretch: 72%; font-weight: 800; text-transform: uppercase; line-height: .92; }
+.brand { display: flex; align-items: center; gap: 12px; position: relative; }
+.brand b { font-family: 'Archivo'; font-stretch: 72%; font-weight: 800; font-size: 30pt; }
+h1 { font-size: 54pt; margin-top: .3in; position: relative; }
+h1 em { font-style: normal; color: #2ec4b6; }
+.card { position: relative; margin-top: .35in; background: #fff; border-radius: 34px; padding: 26px 26px 18px; width: 4.5in; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+.card img { width: 100%; display: block; }
+.card .cta { font-family: 'Archivo'; font-stretch: 72%; font-weight: 800; font-size: 30pt; color: #0b2545; text-transform: uppercase; margin-top: 4px; }
+.card .url { color: #52606d; font-size: 11pt; }
+.sub { position: relative; margin-top: .28in; font-size: 14pt; color: rgba(255,255,255,.85); max-width: 6in; }
+.wave { position: absolute; bottom: 0; left: 0; width: 100%; height: 1.3in; }
+.foot { position: absolute; bottom: .28in; left: 0; right: 0; font-size: 9pt; color: #0b2545; font-weight: 700; }
+</style>
+</head>
+<body>
+<section class="page">
+  <div class="rain" aria-hidden="true">
+    <span style="left:6%;top:4%;height:46px"></span><span style="left:14%;top:22%;height:30px"></span><span style="left:22%;top:9%;height:38px"></span>
+    <span style="left:83%;top:6%;height:44px"></span><span style="left:91%;top:24%;height:32px"></span><span style="left:76%;top:31%;height:26px"></span>
+    <span style="left:9%;top:44%;height:36px"></span><span style="left:94%;top:52%;height:40px"></span><span style="left:4%;top:63%;height:28px"></span>
+    <span style="left:88%;top:70%;height:30px"></span><span style="left:18%;top:72%;height:24px"></span><span style="left:70%;top:14%;height:22px"></span>
+  </div>
+  <div class="brand"><img src="logo.svg" width="54" height="54" alt="" /><b>IFRS</b></div>
+  <h1 class="display">Channel the rain.<br /><em>Protect the terrain.</em></h1>
+  <div class="card">
+    <img src="ifrs-qr.svg" alt="QR code linking to the IFRS web app" />
+    <div class="cta">Scan to explore the live demo</div>
+    <div class="url">isaacalberto.github.io/ifrs</div>
+  </div>
+  <p class="sub">See our rainwater tank and drain sensors respond in real time – right here at the Tatil Building prototype station.</p>
+  <svg class="wave" viewBox="0 0 1440 200" preserveAspectRatio="none"><path d="M0 90c120 0 120-50 240-50s120 50 240 50 120-50 240-50 120 50 240 50 120-50 240-50 120 50 240 50v110H0z" fill="#2ec4b6" opacity=".35"/><path d="M0 120c120 0 120-40 240-40s120 40 240 40 120-40 240-40 120 40 240 40 120-40 240-40 120 40 240 40v80H0z" fill="#f6f8f7"/></svg>
+  <div class="foot">Integrated Flood Resilience System · Group 4 – The Department of Dry Affairs · Student prototype, demonstration data</div>
+</section>
+</body>
+</html>

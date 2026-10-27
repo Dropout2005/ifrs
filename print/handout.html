@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>IFRS – Visitor Guide</title>
+<style>
+@font-face { font-family: 'Archivo'; src: url('file:///home/claude/ifrs/node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'Inter'; src: url('file:///home/claude/ifrs/node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; }
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy: #0b2545; --navy2: #13315c; --teal: #1fa597; --tealD: #0f766e; --aqua: #2ec4b6; --amber: #e39a1b; --ink: #0e1b2b; --muted: #52606d; --sand: #f6f8f7; --line: #e3e9ef; }
+body { font-family: 'Inter', sans-serif; color: var(--ink); font-size: 10.2pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 8.5in; height: 11in; position: relative; overflow: hidden; page-break-after: always; background: #fff; }
+.display { font-family: 'Archivo', sans-serif; font-stretch: 72%; font-weight: 800; text-transform: uppercase; line-height: .95; letter-spacing: -.005em; }
+.eyebrow { font-size: 7.5pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--tealD); }
+.demo { background: var(--amber); color: var(--navy); font-weight: 700; font-size: 8pt; text-align: center; padding: 5px; }
+
+/* page 1 */
+.hero { background: var(--navy); color: #fff; padding: .45in .55in .2in; position: relative; }
+.hero .brand { display: flex; align-items: center; gap: 10px; }
+.hero .brand b { font-family: 'Archivo'; font-stretch: 72%; font-weight: 800; font-size: 20pt; display: block; line-height: 1; }
+.hero .brand span { font-size: 8pt; opacity: .7; }
+.hero h1 { font-size: 37pt; margin-top: .28in; max-width: 4.75in; }
+.hero h1 em { font-style: normal; color: var(--aqua); }
+.hero p.lead { margin-top: .14in; font-size: 11pt; color: rgba(255,255,255,.85); max-width: 4.6in; }
+.wave { display: block; width: 100%; height: 46px; background: var(--navy); }
+.scan { position: absolute; right: .5in; top: .55in; width: 2.55in; background: #fff; border-radius: 18px; padding: 12px 12px 10px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.scan img { width: 100%; display: block; }
+.scan .cta { font-family: 'Archivo'; font-stretch: 72%; font-weight: 800; color: var(--navy); font-size: 16pt; text-transform: uppercase; margin-top: 2px; }
+.scan .url { font-size: 7.6pt; color: var(--muted); }
+.body { padding: .1in .55in 0; }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+.card { border: 1px solid var(--line); border-radius: 14px; padding: 12px 13px; background: #fff; }
+.card h3 { font-size: 10.5pt; color: var(--navy); margin: 6px 0 4px; }
+.card p { font-size: 8.3pt; color: var(--muted); }
+.num { font-family: 'Archivo'; font-stretch: 72%; font-weight: 800; font-size: 22pt; color: var(--teal); line-height: 1; }
+h2 { font-size: 18pt; color: var(--navy); margin: .17in 0 6px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.step { background: var(--sand); border-radius: 12px; padding: 10px 11px; }
+.step b { display: block; color: var(--navy); font-size: 9.5pt; margin-bottom: 2px; }
+.step span { font-size: 8.2pt; color: var(--muted); }
+.step i { font-style: normal; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; font-size: 8.5pt; margin-bottom: 5px; }
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 4px; }
+.fact .v { font-family: 'Archivo'; font-stretch: 72%; font-weight: 800; font-size: 20pt; color: var(--navy); line-height: 1; }
+.fact .t { font-size: 8.2pt; }
+.fact .s { font-size: 6.8pt; color: var(--muted); margin-top: 2px; }
+.foot { position: absolute; left: 0; right: 0; bottom: 0; background: var(--navy); color: rgba(255,255,255,.75); font-size: 7.8pt; padding: 10px .55in; display: flex; justify-content: space-between; }
+
+/* page 2 */
+.top { padding: .3in .55in .08in; display: flex; justify-content: space-between; align-items: flex-end; }
+.top h1 { font-size: 30pt; color: var(--navy); }
+.features { padding: 0 .55in; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.f { display: flex; gap: 10px; border: 1px solid var(--line); border-radius: 14px; padding: 8px 11px; }
+.f .ic { flex: none; width: 30px; height: 30px; border-radius: 9px; background: #ecfbf9; color: var(--tealD); display: grid; place-items: center; }
+.f .ic svg { width: 17px; height: 17px; }
+.f h3 { font-size: 10pt; color: var(--navy); }
+.f p { font-size: 8.1pt; line-height: 1.38; color: var(--muted); margin-top: 1px; }
+.f .where { font-size: 7.6pt; color: var(--tealD); font-weight: 700; margin-top: 3px; }
+.split { padding: 0 .55in; display: grid; grid-template-columns: 1.15fr 1fr; gap: 12px; margin-top: 10px; }
+.box { border-radius: 14px; padding: 10px 13px; }
+.box h3 { font-size: 10.5pt; color: var(--navy); margin-bottom: 6px; }
+.box ul { padding-left: 15px; }
+.box li { font-size: 8.1pt; margin-bottom: 2px; line-height: 1.38; }
+.navybox { background: var(--navy); color: #fff; }
+.navybox h3 { color: var(--aqua); }
+.navybox li { color: rgba(255,255,255,.88); }
+.persona { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; font-size: 8.1pt; line-height: 1.38; }
+.persona b { color: #fff; }
+.amberbox { background: #fdf0d5; border: 1px solid rgba(227,154,27,.45); }
+.mini-qr { width: .95in; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<section class="page">
+  <div class="demo">STUDENT PROTOTYPE · DEMONSTRATION DATA ONLY</div>
+  <div class="hero">
+    <div class="brand">
+      <img src="logo.svg" width="40" height="40" alt="" />
+      <div><b>IFRS</b><span>The Department of Dry Affairs · Group 4</span></div>
+    </div>
+    <div class="eyebrow" style="color: var(--aqua); margin-top: .3in">Integrated Flood Resilience System</div>
+    <h1 class="display" style="margin-top:8px">Channel the rain.<br /><em>Protect the terrain.</em></h1>
+    <p class="lead">One platform that connects rooftop rainwater tanks, smart slow-release valves, storm-drain sensors and community action – piloted on the South Quay / Wrightson Road corridor in Port of Spain.</p>
+    <div class="scan">
+      <img src="ifrs-qr.svg" alt="QR code linking to the IFRS web app" />
+      <div class="cta">Scan to explore</div>
+      <div class="url">isaacalberto.github.io/ifrs</div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" style="background:none"><path d="M0 0h1440v30c-120 0-120 34-240 34s-120-34-240-34-120 34-240 34-120-34-240-34S360 64 240 64 120 30 0 30z" fill="#0b2545"/><path d="M0 46c120 0 120-26 240-26s120 26 240 26 120-26 240-26 120 26 240 26 120-26 240-26 120 26 240 26" stroke="#2ec4b6" stroke-width="5" fill="none" opacity=".6"/></svg>
+
+  <div class="body">
+    <div class="eyebrow">The problem</div>
+    <div class="facts">
+      <div class="fact"><div class="v">1960s</div><div class="t">when much of Port of Spain’s drainage was built</div><div class="s">UN-Habitat, 2012</div></div>
+      <div class="fact"><div class="v">~30%</div><div class="t">of drainage outfalls in central POS reported clogged</div><div class="s">Jeppesen et al., 2015</div></div>
+      <div class="fact"><div class="v">US$11.6M</div><div class="t">estimated annual flood damage in the target area</div><div class="s">Inter-American Development Bank</div></div>
+      <div class="fact"><div class="v">TT$636.8M</div><div class="t">spent on flood mitigation via PSIP, 2018–2022</div><div class="s">Ministry of Finance</div></div>
+    </div>
+
+    <h2 class="display">Three defences, one system</h2>
+    <div class="pillars">
+      <div class="card"><div class="num">01</div><h3>Rainwater collection &amp; slow release</h3><p>Roof-fed tanks catch excess rain. Sensors watch the level and a valve lets water out slowly – only when the drains downstream have room – while keeping a reserve for toilet flushing and other non-potable uses.</p></div>
+      <div class="card"><div class="num">02</div><h3>Storm-drain waste collection</h3><p>Mesh basket inserts under hinged manhole covers trap litter before it blocks the drain. Drain sensors flag rising water and possible blockages so crews can act early.</p></div>
+      <div class="card"><div class="num">03</div><h3>Community empowerment</h3><p>Residents report flooding and blocked drains, join cleanups, and earn reward points once staff verify their contribution.</p></div>
+    </div>
+
+    <h2 class="display">Get started in 4 steps</h2>
+    <div class="steps">
+      <div class="step"><i>1</i><b>Scan the code</b><span>Opens in your phone’s browser. Nothing to install, no sign-up.</span></div>
+      <div class="step"><i>2</i><b>Explore the demo</b><span>Tap “Explore the live demo”. You start as Aaliyah, a sample resident.</span></div>
+      <div class="step"><i>3</i><b>Switch roles</b><span>Use the name menu at the top to view as maintenance crew or an administrator.</span></div>
+      <div class="step"><i>4</i><b>Make it rain</b><span>More → Demo Controls lets you start a storm, a leak or a blocked drain and watch IFRS respond.</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>IFRS · Group 4 – The Department of Dry Affairs</span><span>Samuel Blache · Asia Cooper · Keedanu Halls · Imani Zakuri</span></div>
+</section>
+
+<!-- ============ PAGE 2 ============ -->
+<section class="page">
+  <div class="demo">STUDENT PROTOTYPE · DEMONSTRATION DATA ONLY</div>
+  <div class="top">
+    <div>
+      <div class="eyebrow">Visitor guide</div>
+      <h1 class="display">Main features</h1>
+    </div>
+    <img class="mini-qr" src="ifrs-qr.svg" alt="QR code" />
+  </div>
+  <div class="features">
+    <div class="f"><div class="ic">ICON_DROP</div><div><h3>Smart tank monitoring</h3><p>See each tank’s water level, capacity, free space and 48-hour history. The animated tank fills and empties with the sensor reading.</p><div class="where">My Tanks</div></div></div>
+    <div class="f"><div class="ic">ICON_SHIELD</div><div><h3>Safe automated release</h3><p>The valve opens only when the tank is high, a set amount is kept for reuse, and the drain downstream has room. A checklist shows exactly <i>why</i> it is open or closed.</p><div class="where">My Tanks → any tank with a valve</div></div></div>
+    <div class="f"><div class="ic">ICON_WAVES</div><div><h3>Drain monitoring</h3><p>Live water level, how fast it is rising, basket cleaning dates and <i>suspected</i> blockages for drains along the corridor.</p><div class="where">Drain Monitoring</div></div></div>
+    <div class="f"><div class="ic">ICON_SIREN</div><div><h3>Leak detection</h3><p>Flags water that disappears without explanation, then guides the owner and crew through acknowledge → inspect → confirm → repair.</p><div class="where">Leak Detection</div></div></div>
+    <div class="f"><div class="ic">ICON_PIN</div><div><h3>Report a problem</h3><p>Drop a pin for a flooded road, blocked drain or dumped litter, add a photo, and follow its progress from “submitted” to “resolved”.</p><div class="where">Community Action → New report</div></div></div>
+    <div class="f"><div class="ic">ICON_USERS</div><div><h3>Community cleanups</h3><p>Find upcoming cleanups, register, and check in on the day. Organisers verify attendance and record waste collected.</p><div class="where">Community Action → Cleanup events</div></div></div>
+    <div class="f"><div class="ic">ICON_GIFT</div><div><h3>Rewards</h3><p>Earn points for verified cleanups and genuine reports – each activity counts once – and redeem them for example rewards.</p><div class="where">Rewards</div></div></div>
+    <div class="f"><div class="ic">ICON_MAP</div><div><h3>Map &amp; analytics</h3><p>Every tank, drain, report and cleanup on one map, plus charts and CSV downloads. Private homes are never shown publicly.</p><div class="where">Map &amp; Reports</div></div></div>
+    <div class="f"><div class="ic">ICON_COINS</div><div><h3>Water-rebate concept</h3><p>How a future rebate programme could work: live eligibility check, estimate with its formula, application tracking and staff review.</p><div class="where">Water Rebates</div></div></div>
+    <div class="f"><div class="ic">ICON_CPU</div><div><h3>Tatil prototype station</h3><p>Our test tank and drain sensor at the Tatil Building. Send a sample sensor message and watch the tank update – exactly what our Arduino board will do.</p><div class="where">Tatil Prototype</div></div></div>
+  </div>
+
+  <div class="split">
+    <div class="box navybox">
+      <h3>Try these roles</h3>
+      <div class="persona">
+        <b>Aaliyah</b><span>Resident with two home tanks, a possible leak and a pending rebate application.</span>
+        <b>Kezia</b><span>Building manager for the South Quay and Wrightson Road tanks.</span>
+        <b>Devon</b><span>Maintenance crew: verifies reports, inspects drains, works leak alerts, emergency stop.</span>
+        <b>Admin</b><span>Sets thresholds, rewards and rebate rules; manages users and devices; sees the audit log.</span>
+      </div>
+      <h3 style="margin-top:10px">Quick things to try</h3>
+      <ul>
+        <li>Open a tank and drag the simulation slider to 95% – watch the alert and valve respond.</li>
+        <li>Demo Controls → “Storm”: drains rise and valves close themselves to protect the street.</li>
+        <li>Submit a report as Aaliyah, then switch to Devon and verify it – Aaliyah gets 25 points.</li>
+      </ul>
+    </div>
+    <div class="box amberbox">
+      <h3>Please note</h3>
+      <ul>
+        <li>All people, homes and readings in the app are <b>fictional or simulated</b>, except the prototype station once its sensor is connected.</li>
+        <li>Your changes stay on your own phone. Nothing is sent to WASA, the Regional Corporation or anyone else.</li>
+        <li>Software alone can’t stop flooding – IFRS supports physical drains, tanks and maintenance.</li>
+        <li>Real valves would be controlled by a local controller with its own safety limits, validated by qualified engineers.</li>
+        <li>No official water-rebate scheme exists yet; the rebate section shows a proposal.</li>
+        <li>Use <b>Settings → Data &amp; privacy → Reset</b> to start the demo over.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>Scan the code or visit <b style="color:#fff">isaacalberto.github.io/ifrs</b></span><span>Channel the rain and protect the terrain!</span></div>
+</section>
+</body>
+</html>

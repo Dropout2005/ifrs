@@ -1,0 +1,167 @@
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource-variable/inter';
+@import 'leaflet/dist/leaflet.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Archivo Variable', 'Inter Variable', system-ui, sans-serif;
+
+  --color-navy-950: #061a33;
+  --color-navy-900: #0b2545;
+  --color-navy-800: #13315c;
+  --color-navy-700: #1d4275;
+  --color-navy-100: #dfe8f5;
+  --color-navy-50: #eef3fa;
+
+  --color-teal-700: #0f766e;
+  --color-teal-600: #138a80;
+  --color-teal-500: #1fa597;
+  --color-teal-400: #2ec4b6;
+  --color-teal-100: #d3f3ef;
+  --color-teal-50: #ecfbf9;
+
+  --color-leaf-600: #2f8a4c;
+  --color-leaf-100: #dcf3e2;
+
+  --color-amber-700: #8a4b00;
+  --color-amber-500: #e39a1b;
+  --color-amber-100: #fdf0d5;
+
+  --color-danger-700: #a0111c;
+  --color-danger-500: #d62839;
+  --color-danger-100: #fde2e4;
+
+  --color-sand-50: #f6f8f7;
+  --color-sand-100: #edf1ef;
+  --color-ink: #0e1b2b;
+  --color-muted: #52606d;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--color-sand-50);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  html.large-text {
+    font-size: 112.5%;
+  }
+  html.reduce-motion *,
+  html.reduce-motion *::before,
+  html.reduce-motion *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-teal-400);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-stretch: 72%;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+@utility card {
+  @apply rounded-2xl bg-white border border-sand-100 shadow-[0_1px_2px_rgba(11,37,69,0.06),0_6px_24px_-12px_rgba(11,37,69,0.18)];
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[0.98] disabled:opacity-45 disabled:pointer-events-none min-h-11;
+}
+@utility btn-primary {
+  @apply btn bg-navy-900 text-white hover:bg-navy-800;
+}
+@utility btn-teal {
+  @apply btn bg-teal-600 text-white hover:bg-teal-700;
+}
+@utility btn-ghost {
+  @apply btn bg-white text-navy-900 border border-navy-100 hover:bg-navy-50;
+}
+@utility btn-danger {
+  @apply btn bg-danger-500 text-white hover:bg-danger-700;
+}
+@utility btn-sm {
+  @apply px-3 py-1.5 min-h-9 text-[13px] rounded-lg;
+}
+@utility input {
+  @apply w-full rounded-xl border border-navy-100 bg-white px-3 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-400/40 min-h-11;
+}
+@utility label {
+  @apply block text-[13px] font-semibold text-navy-900 mb-1;
+}
+@utility hint {
+  @apply text-xs text-muted mt-1;
+}
+@utility chip {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+}
+@utility eyebrow {
+  @apply text-[11px] font-bold uppercase tracking-[0.14em] text-teal-700;
+}
+
+/* water animation for the tank graphic */
+@keyframes wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.wave-move {
+  animation: wave 6s linear infinite;
+}
+.wave-move-slow {
+  animation: wave 10s linear infinite;
+}
+@keyframes rainfall {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  border-radius: 1rem;
+}
+.ifrs-marker {
+  background: transparent;
+  border: none;
+}
+
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 0px);
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
