@@ -6,7 +6,7 @@ A mobile-first web app for IFRS: rooftop rainwater tanks with smart slow-release
 
 > **Demo platform.** All people, properties and readings are fictional or simulated. A persistent **DEMO DATA** banner is shown throughout. Nothing is sent to any authority. No official rebate scheme is implied.
 
-**Live site:** https://isaacalberto.github.io/ifrs/
+**Live site:** https://dropout2005.github.io/ifrs/
 
 ---
 

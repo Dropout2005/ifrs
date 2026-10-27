@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw
 
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 opts = dict(a[2:].split('=') for a in sys.argv[1:] if a.startswith('--'))
-URL = args[0] if args else 'https://isaacalberto.github.io/ifrs/'
+URL = args[0] if args else 'https://dropout2005.github.io/ifrs/'
 DOT_R = float(opts.get('dot', 0.28))      # module corner radius (fraction of module)
 FIND_R = float(opts.get('finder', 1.3))   # finder outer corner radius (modules)
 LOGO = float(opts.get('logo', 0.24))      # logo width as fraction of symbol
